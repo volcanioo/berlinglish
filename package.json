@@ -30,9 +30,13 @@
     "twitter": "1.7.1"
   },
   "devDependencies": {
+    "@types/cheerio": "0.22.18",
+    "@types/node": "13.13.4",
+    "@types/twitter": "1.7.0",
     "husky": "4.2.5",
     "prettier": "2.0.5",
-    "pretty-quick": "2.0.1"
+    "pretty-quick": "2.0.1",
+    "typescript": "3.8.3"
   },
   "husky": {
     "hooks": {
