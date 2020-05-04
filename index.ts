@@ -1,16 +1,17 @@
 import cheerio from 'cheerio';
 import axios from 'axios';
 import Twitter from 'twitter';
-const client = new Twitter({
+
+const client: Twitter = new Twitter({
   consumer_key: process.env.TWITTER_API_KEY,
   consumer_secret: process.env.TWITTER_API_SECRET_KEY,
   access_token_key: process.env.TWITTER_ACCESS_TOKEN,
   access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
 });
-const placeId = '3078869807f9dd36'; // Berlin's place ID
+const placeId: string = '3078869807f9dd36'; // Berlin's place ID
 
-const BASE_URL = 'https://www.berlin.de';
-const NEWS_PATH = '/en/news/';
+const BASE_URL: string = 'https://www.berlin.de';
+const NEWS_PATH: string = '/en/news/';
 
 async function fetchArticles(): Promise<Array<any>> {
   const response = await axios(`${BASE_URL}${NEWS_PATH}`);

@@ -14,13 +14,12 @@ const client = new twitter_1.default({
   access_token_key: process.env.TWITTER_ACCESS_TOKEN,
   access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
 });
-const placeId = '3078869807f9dd36'; // Berlin's place ID
+const placeId = '3078869807f9dd36';
 const BASE_URL = 'https://www.berlin.de';
 const NEWS_PATH = '/en/news/';
 async function fetchArticles() {
   const response = await axios_1.default(`${BASE_URL}${NEWS_PATH}`);
   const $ = cheerio_1.default.load(response.data);
-  // .special might include some "random" articles
   const articles = $('#hnews')
     .parent()
     .find('article')
